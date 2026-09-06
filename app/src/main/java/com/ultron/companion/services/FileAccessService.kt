@@ -75,7 +75,7 @@ class FileAccessService : Service() {
                             id = id,
                             index = index++,
                             total = totalChunks,
-                            bytes = buffer.copyOf(count),
+                            data = buffer.copyOf(count),
                         )
                     }
                 } ?: Log.e(TAG, "Unable to open selected URI: $uri")
