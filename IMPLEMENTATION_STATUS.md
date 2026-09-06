@@ -40,3 +40,15 @@
 
 ### Build note
 A Gradle build was not attempted in this sandbox (services.gradle.org is unreachable). The source has been reviewed for correctness; it is ready for `./gradlew assembleDebug` in a normal dev environment.
+
+
+## GitHub Build Error Fixes — 2026-09-07
+
+Fixed the Kotlin compilation errors reported by GitHub Actions:
+- `FileAccessService`: restored valid `Service` lifecycle implementation, `onBind`, and file-transfer error handling.
+- `ScreenMirrorState`: fixed generic/property declaration parsing.
+- `WakeWordDetector`: added the missing `android.content.Intent` import and made recognition restart handling explicit.
+- `StreamingPreviewScreen`: removed the `Context`/`Activity` mismatch by providing a `Context` overload in `MediaProjectionHelper`.
+- `MediaProjectionHelper`: added the Context-based capture-intent API while preserving the Activity overload.
+
+The local environment could not execute Gradle because it has no network access and Gradle 8.9 was not cached. The GitHub Actions workflow remains the authoritative remote build check.

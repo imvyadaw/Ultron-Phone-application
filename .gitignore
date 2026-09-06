@@ -13,3 +13,8 @@
 *.class
 app/build/
 app/release/
+*.jks
+*.keystore
+.env
+.env.*
+!*.env.example
